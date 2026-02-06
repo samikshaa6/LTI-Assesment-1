@@ -77,6 +77,5 @@ The backend provides auto-generated Swagger UI documentation.
 
 - **500 Error during Upload**: Usually means the embedding model is still downloading or `sentence-transformers` is missing. Check backend console.
 - **400 Error (Model Deprecated)**: Ensure `llm_service.py` is pointing to a supported Groq model (e.g., `llama-3.3-70b-versatile`).
-=======
-"# LTI-Assesment-1" 
+
 
