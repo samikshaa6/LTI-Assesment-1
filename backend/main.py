@@ -10,12 +10,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Check for API Key
-API_KEY = os.getenv("GEMINI_API_KEY")
+API_KEY = os.getenv("GROQ_API_KEY")
 if not API_KEY:
     # Fallback if not in env, though it should be.
-    # User provided key in prompt: AIzaSyBUQgzrMJQ-1fxO7PWlSUpPTNMbIeiaeXg
+    # User provided key in prompt: [ENCRYPTION_KEY]
     # STRICTLY FOR DEMO PURPOSES
-    API_KEY = "AIzaSyBUQgzrMJQ-1fxO7PWlSUpPTNMbIeiaeXg"
+    API_KEY = "[ENCRYPTION_KEY]"
 
 app = FastAPI(title="Resume Screening AI")
 
