@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-multipart
+pypdf
+chromadb
+groq Llama 3.3 70B
+python-dotenv
+requests
+openai
+sentence-transformers
