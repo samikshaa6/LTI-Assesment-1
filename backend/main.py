@@ -12,14 +12,11 @@ load_dotenv()
 # Check for API Key
 API_KEY = os.getenv("GROQ_API_KEY")
 if not API_KEY:
-    # Fallback if not in env, though it should be.
-    # User provided key in prompt: [ENCRYPTION_KEY]
-    # STRICTLY FOR DEMO PURPOSES
     API_KEY = "[ENCRYPTION_KEY]"
 
 app = FastAPI(title="Resume Screening AI")
 
-# CORS
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -52,7 +49,6 @@ async def upload_files(
         shutil.copyfileobj(resume.file, buffer)
         
     # Parse Resume
-    # Assuming PDF for resume mostly, or txt
     if resume.filename.endswith(".pdf"):
         resume_text = rag_engine.parse_pdf(resume_path)
     else:
@@ -60,7 +56,7 @@ async def upload_files(
          with open(resume_path, "r", encoding="utf-8") as f:
              resume_text = f.read()
              
-    # Parse JD (assuming txt usually, but handle file)
+    # Parse JD 
     jd_content = await jd.read()
     try:
         jd_text = jd_content.decode("utf-8")
